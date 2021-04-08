@@ -16,8 +16,8 @@ public class ring{
      boolean hit = polyPoint(x1,y1,x2,y2,x3,y3,x4,y4);
      
     if(hit && mousePressed) {flag = !flag;}
-    if (flag) {fill(254);}
-    else{fill(216,113,52);}
+    if (flag) {fill(216,113,52);}
+    else{fill(245,242,242);}
   
      
      beginShape();
