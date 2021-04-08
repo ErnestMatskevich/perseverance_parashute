@@ -24,6 +24,8 @@ void setup(){
 
 void draw(){
   
+  background(100,100,100);
+  
   int num1=0;
   int num2=0;
   int num3=0;
