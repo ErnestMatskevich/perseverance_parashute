@@ -1,13 +1,11 @@
-
 import controlP5.*;
 
 ControlP5 cp5;
 
-String textValue = "";
-
-Textfield myTextfield4;
-Textfield myTextfield3;
-
+String word1 = "";
+String word2 = "";
+String word3 = "";
+String word4 = "";
 
 ring[] fragment1 = new ring[100]; boolean[] memory1 = new boolean[100];
 ring[] fragment2 = new ring[100]; boolean[] memory2 = new boolean[100];
@@ -32,7 +30,7 @@ void setup(){
   cp5 = new ControlP5(this);
   
   for(int i = 1; i<5; i++){
-    cp5.addTextfield("RING"+i)
+           cp5.addTextfield("RING"+i)
                    .setPosition(1300, 100+100*i)
                    .setSize(200, 20)
                    .setFont(createFont("arial",20))
@@ -57,6 +55,7 @@ void draw(){
   int num3=0;
   int num4=0;
   
+  println(WordSplit(word1));
   
   
   for (float a = 0; a<TWO_PI; a += TWO_PI/100){
@@ -125,12 +124,44 @@ void draw(){
            
 }
 
-void clear(int theValue) {
-  myTextfield4.clear();
+void clear1(int theValue) {
+  cp5.get(Textfield.class,"RING1").clear();
 }
 
-void submit(int theValue) {
-  myTextfield4.submit();
+void clear2(int theValue) {
+  cp5.get(Textfield.class,"RING2").clear();
+}
+
+void clear3(int theValue) {
+  cp5.get(Textfield.class,"RING3").clear();
+}
+
+void clear4(int theValue) {
+  cp5.get(Textfield.class,"RING4").clear();
+}
+
+void submit1(int theValue) {
+
+   word1 = (cp5.get(Textfield.class,"RING1").getText()).toUpperCase();
+   cp5.get(Textfield.class,"RING1").clear();
+}
+
+void submit2(int theValue) {
+
+   word2 = (cp5.get(Textfield.class,"RING2").getText()).toUpperCase();
+   cp5.get(Textfield.class,"RING2").clear();
+}
+
+void submit3(int theValue) {
+
+   word3 = (cp5.get(Textfield.class,"RING3").getText()).toUpperCase();
+   cp5.get(Textfield.class,"RING3").clear();
+}
+
+void submit4(int theValue) {
+
+   word4 = (cp5.get(Textfield.class,"RING4").getText()).toUpperCase();
+   cp5.get(Textfield.class,"RING4").clear();
 }
 
 void controlEvent(ControlEvent theEvent) {
@@ -144,3 +175,20 @@ void controlEvent(ControlEvent theEvent) {
     
   }
 }
+
+String[] WordSplit(String word){
+  int num = word.length();
+  String[] bin = new String[num];
+  
+  
+  for(int i = 0; i < num; i++){
+    bin[i] = Word2Bin(char(word.charAt(i)));}
+   return bin;}
+    
+  
+  String Word2Bin(char word){
+  String abc = "_ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  int place = abc.indexOf(word);
+  return binary(place,10);}
+  
+  
