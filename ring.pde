@@ -1,12 +1,14 @@
 public class ring{
   PVector[] vertices = new PVector[4];
-  ring(){}
-  boolean flag = false;
-  boolean pressed = true;
+ 
   
-  void sector(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4){
-     
-    
+  ring(){}
+  
+  
+  boolean flag = false;
+  
+  
+  void sector(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4, int memory){
      
      vertices[0] = new PVector(x1,y1);
      vertices[1] = new PVector(x2,y2);
@@ -16,8 +18,14 @@ public class ring{
      boolean hit = polyPoint(x1,y1,x2,y2,x3,y3,x4,y4);
      
     if(hit && mousePressed) {flag = !flag;}
+    
+    
+    
     if (flag) {fill(216,113,52);}
     else{fill(245,242,242);}
+    
+    if(int(memory) == 49){flag=true;}
+    if(int(memory) == 48){flag=false;}
   
      
      beginShape();
@@ -64,6 +72,4 @@ public class ring{
   
 }
 
-void mouseReleased(){
-    pressed = !pressed;}
 }
