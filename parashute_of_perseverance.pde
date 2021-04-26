@@ -1,4 +1,3 @@
-
 import controlP5.*;
 
 ControlP5 cp5;
@@ -24,7 +23,7 @@ int y_pos = 500;
 
 void setup(){
 
-  size(2000,1000);
+  size(1700,1000);
   background(100,100,100);
   
   for (int i = 0; i < fragment1.length; i++ ) {
@@ -46,10 +45,7 @@ void setup(){
                    
   cp5.addButton("clear"+i, 1000, 1200, 100+100*i, 70, 20).setFont(createFont("arial",13));
   cp5.addButton("submit"+i, 1400, 1530, 100+100*i, 60, 20).setFont(createFont("arial",13));}
-  
- 
-                   
-  
+    
 }
 
 void draw(){
@@ -74,8 +70,7 @@ void draw(){
 
     fragment1[num1].sector(x1,y1,x2,y2,x3,y3,x4,y4,memory1[num1]); num1++;}  
     
-    
-    
+     
     for (float a = 0; a<TWO_PI; a += TWO_PI/100){
     float x2 = x_pos + cos(a)*200;
     float y2 = y_pos + sin(a)*200;
@@ -179,7 +174,7 @@ void controlEvent(ControlEvent theEvent) {
 }
 
 void Word2Bin(String word, int[] memory){
-  String abc = "_ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  String abc = "_ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 *(),.";
   String bin_code = "";
   int place;
   word = word.toUpperCase();
@@ -191,7 +186,3 @@ void Word2Bin(String word, int[] memory){
     
   for(int i = 0; i<bin_code.length(); i++){
     memory[i] = (bin_code.charAt(i));}}
-    
-
-  
-  
