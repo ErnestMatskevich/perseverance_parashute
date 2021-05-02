@@ -17,7 +17,6 @@ public int[] memory2 = new int[100];
 public int[] memory3 = new int[100];
 public int[] memory4 = new int[100];
 
-
 int len_field = 300;
 
 
@@ -35,9 +34,7 @@ void setup(){
    fragment4[i]= new ring(); 
    
  }
-  
- 
-       Buttons();            
+ Buttons();            
                    
 
 }
@@ -47,8 +44,6 @@ void draw(){
   
   float x_pos = ring_len*5;
   float y_pos = height/2;
-  
-  println(displayWidth, displayHeight);
   
   int num1=0;
   int num2=0;
@@ -133,14 +128,6 @@ void submit(){
   
 }
 
-void controlEvent(ControlEvent theEvent) {
-  if (theEvent.isAssignableFrom(Textfield.class)) {
-    Textfield t = (Textfield)theEvent.getController();
-
-    println("Вы ввели: "
-      +t.getName()+"': "+t.getStringValue());    
-  }
-}
 
 void Word2Bin(String word, int[] memory){
   
