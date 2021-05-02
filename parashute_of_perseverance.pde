@@ -18,7 +18,7 @@ public int[] memory3 = new int[100];
 public int[] memory4 = new int[100];
 
 
-
+int len_field = 300;
 
 
 void setup(){
@@ -47,6 +47,8 @@ void draw(){
   
   float x_pos = ring_len*5;
   float y_pos = height/2;
+  
+  println(displayWidth, displayHeight);
   
   int num1=0;
   int num2=0;
@@ -159,12 +161,15 @@ void Word2Bin(String word, int[] memory){
     memory[i] = (bin_code.charAt(i));}}
     
 void Buttons(){
+  float x_place = width*0.6;
+    if ((width<=1280)||(height<=768)){x_place=800;len_field=200;}
+    
    
   cp5 = new ControlP5(this);
   for(int i = 1; i<5; i++){
            cp5.addTextfield("RING"+i)
-                   .setPosition(width*0.6, 100+100*i)
-                   .setSize(300, 25)
+                   .setPosition(x_place, 100+100*i)
+                   .setSize(len_field, 25)
                    .setFont(createFont("Times New Roman",25));}
 }
   
