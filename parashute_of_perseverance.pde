@@ -21,6 +21,7 @@ int len_field = 300;
 
 
 void setup(){
+  smooth();
   
   size(displayWidth,displayHeight);
   surface.setResizable(true);
@@ -35,7 +36,7 @@ void setup(){
    
  }
  Buttons();            
-                   
+           
 
 }
 
@@ -120,12 +121,10 @@ void draw(){
 
 
 void submit(){
-  word1 = (cp5.get(Textfield.class,"RING1").getText()).toUpperCase(); Word2Bin(word1,memory1);
-  word2 = (cp5.get(Textfield.class,"RING2").getText()).toUpperCase(); Word2Bin(word2,memory2);
-  word3 = (cp5.get(Textfield.class,"RING3").getText()).toUpperCase(); Word2Bin(word3,memory3);
-  word4 = (cp5.get(Textfield.class,"RING4").getText()).toUpperCase(); Word2Bin(word4,memory4);
-  
-  
+  word1 = (cp5.get(Textfield.class,"RING1").getText()).toUpperCase(); if(word1.length()>10){cp5.get(Textfield.class,"RING1").setText("Long text!");} Word2Bin(word1,memory1);
+  word2 = (cp5.get(Textfield.class,"RING2").getText()).toUpperCase(); if(word2.length()>10){cp5.get(Textfield.class,"RING2").setText("Long text!");} Word2Bin(word2,memory2);
+  word3 = (cp5.get(Textfield.class,"RING3").getText()).toUpperCase(); if(word3.length()>10){cp5.get(Textfield.class,"RING3").setText("Long text!");} Word2Bin(word3,memory3);
+  word4 = (cp5.get(Textfield.class,"RING4").getText()).toUpperCase(); if(word4.length()>10){cp5.get(Textfield.class,"RING4").setText("Long text!");} Word2Bin(word4,memory4); 
 }
 
 
@@ -135,9 +134,10 @@ void Word2Bin(String word, int[] memory){
   String abc = "_ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 *(),.";
   String bin_code = "";
   int place;
-  if(word.length()>10){word="";}
   
-  word = word.toUpperCase();
+  
+  if((word.length()==0)||(word=="Long text!")||(word.length()>10)){for(int i = 0; i<100; i++){memory[i] = 48;}}
+  else{
   
   for(int i = 0; i<word.length(); i++){
     
@@ -145,7 +145,7 @@ void Word2Bin(String word, int[] memory){
     bin_code = bin_code + (binary(place,10));}
     
   for(int i = 0; i<bin_code.length(); i++){
-    memory[i] = (bin_code.charAt(i));}}
+    memory[i] = (bin_code.charAt(i));}}}
     
 void Buttons(){
   float x_place = width*0.6;
