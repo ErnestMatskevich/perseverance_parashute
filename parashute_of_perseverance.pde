@@ -121,10 +121,14 @@ void draw(){
 
 
 void submit(){
-  word1 = (cp5.get(Textfield.class,"RING1").getText()).toUpperCase(); if(word1.length()>10){cp5.get(Textfield.class,"RING1").setText("Long text!");} Word2Bin(word1,memory1);
-  word2 = (cp5.get(Textfield.class,"RING2").getText()).toUpperCase(); if(word2.length()>10){cp5.get(Textfield.class,"RING2").setText("Long text!");} Word2Bin(word2,memory2);
-  word3 = (cp5.get(Textfield.class,"RING3").getText()).toUpperCase(); if(word3.length()>10){cp5.get(Textfield.class,"RING3").setText("Long text!");} Word2Bin(word3,memory3);
-  word4 = (cp5.get(Textfield.class,"RING4").getText()).toUpperCase(); if(word4.length()>10){cp5.get(Textfield.class,"RING4").setText("Long text!");} Word2Bin(word4,memory4); 
+  word1 = (cp5.get(Textfield.class,"RING1").getText()).toUpperCase(); if(word1.length()>10){cp5.get(Textfield.class,"RING1").setText("Long text!").setColor(#E5DADB);}
+  if((word1.length()<=10)&&(word1!="Long text!")){cp5.get(Textfield.class,"RING1").setColor(#FFFFFF);} Word2Bin(word1,memory1);
+  word2 = (cp5.get(Textfield.class,"RING2").getText()).toUpperCase(); if(word2.length()>10){cp5.get(Textfield.class,"RING2").setText("Long text!").setColor(#E5DADB);}
+  if((word2.length()<=10)&&(word2!="Long text!")){cp5.get(Textfield.class,"RING2").setColor(#FFFFFF);}Word2Bin(word2,memory2);
+  word3 = (cp5.get(Textfield.class,"RING3").getText()).toUpperCase(); if(word3.length()>10){cp5.get(Textfield.class,"RING3").setText("Long text!").setColor(#E5DADB);}
+  if((word3.length()<=10)&&(word3!="Long text!")){cp5.get(Textfield.class,"RING3").setColor(#FFFFFF);}Word2Bin(word3,memory3);
+  word4 = (cp5.get(Textfield.class,"RING4").getText()).toUpperCase(); if(word4.length()>10){cp5.get(Textfield.class,"RING4").setText("Long text!").setColor(#E5DADB);}
+  if((word4.length()<=10)&&(word4!="Long text!")){cp5.get(Textfield.class,"RING4").setColor(#FFFFFF);}Word2Bin(word4,memory4); 
 }
 
 
