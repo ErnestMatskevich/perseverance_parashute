@@ -1,4 +1,4 @@
-import controlP5.*;
+import  .*;
 
 ControlP5 cp5;
 
@@ -162,5 +162,10 @@ void Buttons(){
                    .setPosition(x_place, 100+100*i)
                    .setSize(len_field, 25)
                    .setFont(createFont("Times New Roman",25));}
+          cp5.get(Textfield.class,"RING1").setText("Dare");
+          cp5.get(Textfield.class,"RING2").setText("Mighty");
+          cp5.get(Textfield.class,"RING3").setText("Things");
+          cp5.get(Textfield.class,"RING4").setText("34 N 118 W");
 }
+
   
